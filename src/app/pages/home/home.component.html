@@ -1,0 +1,43 @@
+<div class="flex justify-center items-center h-[100vh]">
+    <!-- <form [formGroup]="loginForm"> -->
+      <div>
+        <header class="flex items-center justify-center my-3 text-3xl font-serif  text-green-600">
+          Something
+        </header>
+        <div class="login-form">
+          <div class="field mb-1">
+            <label for="email" class="font-medium ">Email Address</label>
+            <input type="email" formControlName="email"
+              class="w-full py-2 px-2 rounded-md border-slate-400 border-solid border" name="email"
+              placeholder="hello@example.com" />
+            <!-- <small *ngIf="email.invalid && (email.dirty || email.touched)" class="block p-error">
+              <div *ngIf="email.errors?.['required']">Email is requried.</div>
+              <div *ngIf="email.errors?.['email']">Email should be valid></div>
+            </small> -->
+          </div>
+          <div class="field mt-4">
+            <div class="flex space-x-28 mb-2 font-medium">
+              <label for="password">Password</label>
+              <label for="forgot password" class="text-green-600 font-thin cursor-pointer">Forgot password</label>
+            </div>
+            <input type="password" formControlName="password"
+              class="w-full py-2 px-2 mb-2 rounded-md border-slate-400 border-solid border" name="email"
+              placeholder="● ● ● ● ● ● ●" />
+            <!-- <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
+              <div *ngIf="password.errors?.['required']">Password is requried.</div>
+            </small> -->
+          </div>
+        </div>
+        <button >
+          
+        </button>
+        <a [routerLink]="['/sidebar/overview']" role="button" class="justify-center flex bg-green-500 items-center w-full py-2 rounded-lg cursor-pointer text-white"
+        (click)="gotoPage">Login</a>
+        <div class="mt-2">
+          Not a member?
+          <a class="mx-1 text-green-600 font-thin cursor-pointer" [routerLink]="['/register']">Register</a>
+        </div>
+      </div>
+    <!-- </form> -->
+  
+  </div>

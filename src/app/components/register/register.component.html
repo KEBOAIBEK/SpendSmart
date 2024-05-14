@@ -1,0 +1,79 @@
+<div class="flex w-full justify-center items-center">
+  <div class="flex justify-center items-center h-[100vh]">
+    <div class="container">
+      <header
+        class="flex items-center justify-center my-3 text-3xl font-serif text-green-600"
+      >
+        Create your account
+      </header>
+      <div class="field mb-3">
+        <div class="mb-1">
+          <label for="fullname" class="font-medium">Name</label>
+        </div>
+        <div>
+          <input
+            type="text"
+            formControlName="name"
+            class="w-full py-2 px-2 rounded-md border-slate-400 border-solid border"
+            name="email"
+            placeholder="Tanzir Rahman"
+          />
+        </div>
+      </div>
+      <div class="field mb-3">
+        <div class="mb-1"><label for="email" class="font-medium">Email Address</label></div>
+        <div>
+          <input
+          type="email"
+          formControlName="email"
+          class="w-full py-2 px-2 rounded-md border-slate-400 border-solid border"
+          name="email"
+          placeholder="hello@exapmle.com"
+        />
+        </div>
+      </div>
+      <div class="field mb-3">
+        <div class="mb-1">
+          <label for="password" class="font-medium">Password</label>
+        </div>
+        <input
+          type="password"
+          formControlName="password"
+          class="w-full py-2 px-2 rounded-md border-slate-400 border-solid border"
+          name="password"
+          placeholder="● ● ● ● ● ● ●"
+        />
+      </div>
+      <div class="field mb-3">
+        <div class="mb-1">
+          <label for="password" class="font-medium">Password cheking</label>
+        </div>
+        <input
+          type="password"
+          formControlName="password"
+          class="w-full py-2 px-2 rounded-md border-slate-400 border-solid border"
+          name="password"
+          placeholder="● ● ● ● ● ● ●"
+        />
+      </div>
+      <h3 class="text-sm mb-2">
+        By contining, you are aggre to our
+        <a href="http://#" class="text-cyan-900 font-medium"
+          >terms of service</a
+        >
+      </h3>
+      <a
+        [routerLink]="['/sidebar/overview']"
+        role="button"
+        class="justify-center flex bg-green-500 items-center w-full py-2 rounded-lg text-white"
+        >Register</a
+      >
+      <div class="mt-2">
+        Already a member?
+        <a class="mx-2 text-green-400 font-medium" [routerLink]="['/home']"
+          >Login</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,13 +7,15 @@ import {
   ApexXAxis,
   ApexDataLabels,
   ApexTooltip,
-  ApexStroke
+  ApexStroke,
+  ApexYAxis
 } from "ng-apexcharts";
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
   chart: ApexChart;
   xaxis: ApexXAxis;
+  yaxis: ApexYAxis;
   stroke: ApexStroke;
   tooltip: ApexTooltip;
   dataLabels: ApexDataLabels;
@@ -21,11 +23,11 @@ export type ChartOptions = {
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-goals',
+  templateUrl: './goals.component.html',
+  styleUrls: ['./goals.component.css']
 })
-export class AppComponent {
+export class GoalsComponent {
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
@@ -33,16 +35,16 @@ export class AppComponent {
     this.chartOptions = {
       series: [
         {
-          name: "series1",
-          data: [31, 40, 28, 51, 42, 109, 100]
+          name: "This year",
+          data: [200, 400, 600, 800, 1000, 1200, 1400]
         },
         {
-          name: "series2",
-          data: [11, 32, 45, 32, 34, 52, 41]
+          name: "Last year",
+          data: [101, 320, 450, 320, 340, 520, 410]
         }
       ],
       chart: {
-        height: 350,
+        height: 280,
         type: "area"
       },
       dataLabels: {
@@ -54,18 +56,25 @@ export class AppComponent {
       xaxis: {
         type: "datetime",
         categories: [
-          "2018-09-19T00:00:00.000Z",
-          "2018-09-19T01:30:00.000Z",
-          "2018-09-19T02:30:00.000Z",
-          "2018-09-19T03:30:00.000Z",
-          "2018-09-19T04:30:00.000Z",
-          "2018-09-19T05:30:00.000Z",
-          "2018-09-19T06:30:00.000Z"
+          "2018-05-01T00:00:00.000Z",
+          "2018-05-02T01:00:00.000Z",
+          "2018-05-03T02:00:00.000Z",
+          "2018-05-04T03:00:00.000Z",
+          "2018-05-05T04:00:00.000Z",
+          "2018-05-06T05:00:00.000Z",
+          "2018-05-07T06:00:00.000Z"
         ]
+      },
+      yaxis: {
+        labels: {
+          formatter: function (value) {
+            return '$ ' + value;
+          },
+        }
       },
       tooltip: {
         x: {
-          format: "dd/MM/yy HH:mm"
+          format: 'HH:mm MMM dd'
         }
       }
     };
@@ -86,4 +95,5 @@ export class AppComponent {
     }
     return series;
   }
+  imagePath: string = 'assets/img/Graph.jpg';
 }

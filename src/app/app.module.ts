@@ -3,14 +3,35 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { BillsComponent } from './components/bills/bills.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { OverviewComponent } from './components/overview/overview.component';
+import { BalancesComponent } from './components/balances/balances.component';
+import { GoalsComponent } from './components/goals/goals.component';
+
+import { NgApexchartsModule } from "ng-apexcharts";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    BillsComponent,
+    SettingsComponent,
+    SidebarComponent,
+    OverviewComponent,
+    BalancesComponent,
+    GoalsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
