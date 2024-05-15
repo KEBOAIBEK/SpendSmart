@@ -14,6 +14,9 @@ import { BalancesComponent } from './components/balances/balances.component';
 import { GoalsComponent } from './components/goals/goals.component';
 
 import { NgApexchartsModule } from "ng-apexcharts";
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { ExpencesComponent } from './components/expences/expences.component';
+import { AccdetailsComponent } from './components/balances/accdetails/accdetails.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { NgApexchartsModule } from "ng-apexcharts";
     OverviewComponent,
     BalancesComponent,
     GoalsComponent,
+    TransactionComponent,
+    ExpencesComponent,
+    AccdetailsComponent,
   ],
   imports: [
     BrowserModule,

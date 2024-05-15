@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -9,6 +9,9 @@ import { BalancesComponent } from './components/balances/balances.component';
 import { GoalsComponent } from './components/goals/goals.component';
 import { BillsComponent } from './components/bills/bills.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { ExpencesComponent } from './components/expences/expences.component';
+import { AccdetailsComponent } from './components/balances/accdetails/accdetails.component';
 
 const routes: Routes = [
   {
@@ -34,7 +37,13 @@ const routes: Routes = [
           },
           {
             path: 'balances',
-            component: BalancesComponent
+            component: BalancesComponent,
+            children: [
+            {
+                path: 'accdetails',
+                component:AccdetailsComponent
+            }
+            ]
           },
           {
             path: 'goals',
@@ -48,7 +57,14 @@ const routes: Routes = [
             path: 'settings',
             component: SettingsComponent
           },
-          
+          {
+            path: 'transaction',
+            component: TransactionComponent
+          },
+          {
+            path: 'expences',
+            component: ExpencesComponent
+          }
         ]
       },
   {
